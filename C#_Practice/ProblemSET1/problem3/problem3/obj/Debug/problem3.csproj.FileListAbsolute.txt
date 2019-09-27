@@ -1,6 +1,0 @@
-D:\C#_Practice\ProblemSET1\problem3\problem3\bin\Debug\problem3.exe.config
-D:\C#_Practice\ProblemSET1\problem3\problem3\bin\Debug\problem3.exe
-D:\C#_Practice\ProblemSET1\problem3\problem3\bin\Debug\problem3.pdb
-D:\C#_Practice\ProblemSET1\problem3\problem3\obj\Debug\problem3.csproj.CoreCompileInputs.cache
-D:\C#_Practice\ProblemSET1\problem3\problem3\obj\Debug\problem3.exe
-D:\C#_Practice\ProblemSET1\problem3\problem3\obj\Debug\problem3.pdb
