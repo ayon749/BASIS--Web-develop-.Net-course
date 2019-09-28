@@ -28,24 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nameInputbox = new System.Windows.Forms.TextBox();
+            this.firstNameInputbox = new System.Windows.Forms.TextBox();
             this.showButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lastNameInputBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fullNameTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // nameInputbox
+            // firstNameInputbox
             // 
-            this.nameInputbox.Location = new System.Drawing.Point(328, 116);
-            this.nameInputbox.Name = "nameInputbox";
-            this.nameInputbox.Size = new System.Drawing.Size(215, 20);
-            this.nameInputbox.TabIndex = 0;
+            this.firstNameInputbox.Location = new System.Drawing.Point(328, 116);
+            this.firstNameInputbox.Name = "firstNameInputbox";
+            this.firstNameInputbox.Size = new System.Drawing.Size(215, 20);
+            this.firstNameInputbox.TabIndex = 0;
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(390, 157);
+            this.showButton.Location = new System.Drawing.Point(468, 169);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 23);
-            this.showButton.TabIndex = 1;
+            this.showButton.TabIndex = 2;
             this.showButton.Text = "show";
             this.showButton.UseVisualStyleBackColor = true;
             this.showButton.Click += new System.EventHandler(this.showButton_Click);
@@ -55,18 +59,54 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(234, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Enter Your Name";
+            this.label1.Text = "Enter First Name";
+            // 
+            // lastNameInputBox
+            // 
+            this.lastNameInputBox.Location = new System.Drawing.Point(328, 143);
+            this.lastNameInputBox.Name = "lastNameInputBox";
+            this.lastNameInputBox.Size = new System.Drawing.Size(215, 20);
+            this.lastNameInputBox.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(234, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Enter  last Name";
+            // 
+            // fullNameTextBox
+            // 
+            this.fullNameTextBox.Location = new System.Drawing.Point(328, 215);
+            this.fullNameTextBox.Name = "fullNameTextBox";
+            this.fullNameTextBox.Size = new System.Drawing.Size(215, 20);
+            this.fullNameTextBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(237, 221);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Full Name";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.fullNameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lastNameInputBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.showButton);
-            this.Controls.Add(this.nameInputbox);
+            this.Controls.Add(this.firstNameInputbox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -79,9 +119,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox nameInputbox;
+        private System.Windows.Forms.TextBox firstNameInputbox;
         private System.Windows.Forms.Button showButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox lastNameInputBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox fullNameTextBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 

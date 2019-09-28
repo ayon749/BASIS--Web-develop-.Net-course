@@ -19,8 +19,13 @@ namespace inputname
 
         private void showButton_Click(object sender, EventArgs e)
         {
-          string name=  nameInputbox.Text;
-          MessageBox.Show("Hi " + name + " welcom!!!");
+          string firstname=  firstNameInputbox.Text;
+          string lastName = lastNameInputBox.Text;
+          string fullName = firstname + " " + lastName;
+          fullNameTextBox.Text = fullName;
+
         }
+
+        
     }
 }
