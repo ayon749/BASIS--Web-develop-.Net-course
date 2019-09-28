@@ -99,13 +99,13 @@ namespace calculatorApp
             }
         }
 
-        private bool ISEmpty(string firstName, string lastName)
+        private bool ISEmpty(string firstNumber, string lastNumber)
         {
-            if (firstName == string.Empty)
+            if (firstNumber == string.Empty)
             {
                 return false;
             }
-            else if (lastName == string.Empty)
+            else if (lastNumber == string.Empty)
             {
                 return false;
             }
