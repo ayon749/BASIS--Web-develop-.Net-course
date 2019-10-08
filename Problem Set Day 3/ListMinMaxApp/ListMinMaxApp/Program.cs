@@ -13,6 +13,7 @@ namespace ListMinMaxApp
 			List<int> numberList = new List<int>();
 			Console.WriteLine("Enter the size of the list: ");
 			int size = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Enter the list of size {0} ", size);
 			for(int i = 0; i < size; i++)
 			{
 				int number = Convert.ToInt32(Console.ReadLine());
@@ -29,7 +30,7 @@ namespace ListMinMaxApp
 		}
 		static int GetMaxNumber(List<int> numberArray)
 		{
-			int max = 0;
+			int max = numberArray[0];
 			foreach(int number in numberArray)
 			{
 				if(number> max)
@@ -41,7 +42,7 @@ namespace ListMinMaxApp
 		}
 		static int GetMinNumber(List<int> numberArray)
 		{
-			int min = 99999999;
+			int min = numberArray[0];
 			foreach (int number in numberArray)
 			{
 				if (number < min)
