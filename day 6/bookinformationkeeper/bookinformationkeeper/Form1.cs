@@ -12,7 +12,7 @@ namespace bookinformationkeeper
 {
     public partial class Form1 : Form
     {
-        private Dictionary<double,string> bookInfo=new Dictionary<double, string>();
+        private Dictionary<string,string> bookInfo=new Dictionary<string, string>();
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace bookinformationkeeper
 			string isbnTrim = isbnTextBox.Text.TrimStart();
 			if (isbnTrim != string.Empty && nameTextBox.Text != string.Empty)
 			{
-				double isbn = Convert.ToDouble(isbnTextBox.Text);
+				string isbn = isbnTextBox.Text;
 				string name = nameTextBox.Text;
 				bool isNotempty = BlankField(isbn, name);
 				if (isNotempty)
@@ -47,10 +47,10 @@ namespace bookinformationkeeper
 
         }
 
-        static bool BlankField(double isbn, string name)
+        static bool BlankField(string isbn, string name)
         {
             bool isEmpty = false;
-            if (isbn == 0 || name==null)
+            if (isbn == null || name==null)
             {
                 isEmpty = false;
 
@@ -71,7 +71,7 @@ namespace bookinformationkeeper
 
 				if (isbnradioButton.Checked)
 				{
-					double isbn = Convert.ToDouble(searchTextBox.Text);
+					string isbn = searchTextBox.Text;
 					if (bookInfo.ContainsKey(isbn))
 					{
 						searchListBox.Items.Add(bookInfo[isbn]);
