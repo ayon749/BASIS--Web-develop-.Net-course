@@ -46,6 +46,7 @@ namespace VehicleInfo
 			double maxSpeed = bVehicle.GetMaxSpeed();
 			double minSpeed = bVehicle.GetMMinSpeed();
 			double avgSpeed = bVehicle.GetAvgSpeed();
+			avgSpeed = Math.Round(avgSpeed, 2);
 			maxSpeedLabel.Text = maxSpeed.ToString();
 			minSpeedLabel.Text = minSpeed.ToString();
 			avgSpeedLabel.Text = avgSpeed.ToString();
