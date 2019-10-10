@@ -24,10 +24,10 @@ namespace bookinformationkeeper
 			string isbnTrim = isbnTextBox.Text.TrimStart();
 			if (isbnTrim != string.Empty && nameTextBox.Text != string.Empty)
 			{
-				string isbn = isbnTextBox.Text;
-				string name = nameTextBox.Text;
+				string isbn = isbnTextBox.Text.ToLower();
+				string name = nameTextBox.Text.ToLower();
 				bool isNotempty = BlankField(isbn, name);
-				if (isNotempty)
+				if (isNotempty || isbn.Length>=13)
 				{
 					bookInfo.Add(isbn, name);
 					addlistBox.Items.Add(isbn);
@@ -66,12 +66,12 @@ namespace bookinformationkeeper
         private void searchButton_Click(object sender, EventArgs e)
         {
 			searchListBox.Items.Clear();
-			if (searchTextBox.Text != string.Empty)
+			if (searchTextBox.Text.ToLower() != string.Empty)
 			{
 
 				if (isbnradioButton.Checked)
 				{
-					string isbn = searchTextBox.Text;
+					string isbn = searchTextBox.Text.ToLower();
 					if (bookInfo.ContainsKey(isbn))
 					{
 						searchListBox.Items.Add(bookInfo[isbn]);
@@ -83,7 +83,7 @@ namespace bookinformationkeeper
 				}
 				else
 				{
-					string name = searchTextBox.Text;
+					string name = searchTextBox.Text.ToLower();
 					if (bookInfo.ContainsValue(name))
 					{
 						searchListBox.Items.Add(name);
