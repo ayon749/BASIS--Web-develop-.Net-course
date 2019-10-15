@@ -8,12 +8,23 @@ namespace OOPBasicApp
 {
 	class Person
 	{
-		public string firstName, middleName, lastName;
-		public Person(string firstName,string middleName,string lastName)
+		private string firstName, middleName, lastName;
+		private int id;
+		
+		public Person(string firstName,string middleName,string lastName):this()
 		{
 			this.firstName = firstName;
 			this.middleName = middleName;
 			this.lastName = lastName;
+		}
+		public Person()
+		{
+			id = 123;
+		}
+		public int GetId()
+		{
+			return id;
+
 		}
 
 		public string GetFullName()

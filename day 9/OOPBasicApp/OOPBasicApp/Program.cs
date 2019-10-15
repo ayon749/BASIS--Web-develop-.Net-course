@@ -11,8 +11,10 @@ namespace OOPBasicApp
 		static void Main(string[] args)
 		{
 			Person person1 = new Person("Sakib","Al","Hasan");
+			
 			string fullName=person1.GetFullName();
-			Console.WriteLine("My name is " + fullName);
+			int id = person1.GetId();
+			Console.WriteLine("My name is " + fullName+" and my id is "+id);
 
 			Console.ReadKey();
 
