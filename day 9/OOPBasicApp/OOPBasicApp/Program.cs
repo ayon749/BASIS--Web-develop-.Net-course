@@ -10,7 +10,7 @@ namespace OOPBasicApp
 	{
 		static void Main(string[] args)
 		{
-			Person person1 = new Person("Sakib","Al","Hasan");
+			Person person1 = new Person("Mushfiqur","Rahman");
 			
 			string fullName=person1.GetFullName();
 			int id = person1.GetId();

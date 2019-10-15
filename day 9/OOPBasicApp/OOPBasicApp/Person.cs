@@ -11,10 +11,15 @@ namespace OOPBasicApp
 		private string firstName, middleName, lastName;
 		private int id;
 		
-		public Person(string firstName,string middleName,string lastName):this()
+		public Person(string firstName,string middleName,string lastName):this(firstName,lastName)
 		{
 			this.firstName = firstName;
 			this.middleName = middleName;
+			this.lastName = lastName;
+		}
+		public Person(string firstName,string lastName):this()
+		{
+			this.firstName = firstName;
 			this.lastName = lastName;
 		}
 		public Person()
@@ -30,7 +35,16 @@ namespace OOPBasicApp
 		public string GetFullName()
 
 		{
-			string fullName = firstName + " " + middleName + " " + lastName;
+			string fullName;
+			if (middleName != string.Empty)
+			{
+				 fullName = firstName + " " + middleName + " " + lastName;
+				
+			}
+			else
+			{
+				fullName = firstName + " " + lastName;
+			}
 			return fullName;
 		}
 
