@@ -37,7 +37,7 @@ namespace InformationManagment {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputEmailAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inputEmailAddress;
         
         /// <summary>
         /// inputRegNo control.
@@ -92,5 +92,23 @@ namespace InformationManagment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button saveButton;
+        
+        /// <summary>
+        /// successMessageLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label successMessageLabel;
+        
+        /// <summary>
+        /// studentGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView studentGridView;
     }
 }
