@@ -64,7 +64,7 @@ namespace InformationManagment
 			List<Student> studentList = new List<Student>();
 			string connectionString = @"Server=DESKTOP-KIQISOE\MUSHFIQSQL;Database=InformationManagementDB; Integrated Security=true;";
 			SqlConnection sqlConnection = new SqlConnection(connectionString);
-			string query = "SELECT * FROM Student_tbl";
+			string query = "SELECT * FROM Student_tbl ORDER BY Student_id DESC";
 			SqlCommand command = new SqlCommand(query, sqlConnection);
 			sqlConnection.Open();
 			SqlDataReader reader = command.ExecuteReader();
