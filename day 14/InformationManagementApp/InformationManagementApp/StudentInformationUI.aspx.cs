@@ -17,8 +17,8 @@ namespace InformationManagementApp
 		{
 			List<Student> studentList = new List<Student>();
 			studentList=studentManager.ShowAllStudent();
-			studentGridView.DataSource = studentList;
-			studentGridView.DataBind();
+			//studentGridView.DataSource = studentList;
+			//studentGridView.DataBind();
 		}
 
 		protected void saveButton_Click(object sender, EventArgs e)
@@ -45,8 +45,8 @@ namespace InformationManagementApp
 			}
 			List<Student> studentList = new List<Student>();
 			studentList = studentManager.ShowAllStudent();
-			studentGridView.DataSource = studentList;
-			studentGridView.DataBind();
+			//studentGridView.DataSource = studentList;
+			//studentGridView.DataBind();
 			ClearField();
 			
 		}
