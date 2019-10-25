@@ -9,18 +9,34 @@ namespace InformationManagementApp.BLL
 {
 	public class StudentManager
 	{
+		GatewayStudent gatewayStudent = new GatewayStudent();
 		public string StudentInsert(Student student)
 		{
-			GatewayStudent gatewayStudent = new GatewayStudent();
-			int rowEffect=gatewayStudent.InsertStudent(student);
-			if (rowEffect > 0)
+			string message;
+			
+			if (!gatewayStudent.isExist(student))
 			{
-				return "Student information saved successfully!";
+				int rowEffect = gatewayStudent.InsertStudent(student);
+				if (rowEffect > 0)
+				{
+					message = "Student information saved successfully!";
+				}
+				else
+				{
+					message = "Can not save information.";
+				}
 			}
 			else
 			{
-				return "Can not save information.";
+				message = "Already registered a student with same Registration Number";
 			}
+			return message;
+		}
+		public List<Student> ShowAllStudent()
+		{
+			List<Student> studentList = new List<Student>();
+				 studentList=gatewayStudent.showAllStudent();
+			return studentList;
 		}
 	}
 }
