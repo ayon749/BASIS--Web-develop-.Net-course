@@ -60,5 +60,32 @@ namespace InformationManagementApp
 			inputAddress.Value = string.Empty;
 
 		}
+
+		protected void updateButton_Click(object sender, EventArgs e)
+		{
+			string name = inputStudentName.Value;
+			string email = inputEmailAddress.Value;
+			string regNo = inputRegNo.Value;
+			string mobileNo = inputMobileNo.Value;
+			int age = Convert.ToInt32(inputAge.Value);
+			string address = inputAddress.Value;
+			Student student = new Student(name, email, regNo, mobileNo, age, address);
+			string message = studentManager.Update(student);
+			successMessageLabel.Text = message;
+		}
+
+		protected void deleteButton_Click(object sender, EventArgs e)
+		{
+			string name = inputStudentName.Value;
+			string email = inputEmailAddress.Value;
+			string regNo = inputRegNo.Value;
+			string mobileNo = inputMobileNo.Value;
+			int age = Convert.ToInt32(inputAge.Value);
+			string address = inputAddress.Value;
+			Student student = new Student(name, email, regNo, mobileNo, age, address);
+			string message=studentManager.Delete(student);
+			successMessageLabel.Text = message;
+
+		}
 	}
 }

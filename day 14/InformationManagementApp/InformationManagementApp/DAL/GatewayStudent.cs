@@ -71,6 +71,26 @@ namespace InformationManagementApp.DAL
 			sqlConnection.Close();
 			return studentList;
 		}
+		public int UpdateInfo(Student student)
+		{
+			SqlConnection sqlConnection = new SqlConnection(connectionString);
+			string query = @"UPDATE Student_tbl SET Student_Name = '" + student.StudentName + "', Student_Email = '" + student.StudentEmail + "', Student_Mobile_no = '" + student.MobileNo + "', Student_Address = '" + student.Address + "', Student_Age = " + student.Age + "WHERE Student_Reg_No = '" + student.RegNo + "';";
+			SqlCommand command = new SqlCommand(query, sqlConnection);
+			sqlConnection.Open();
+			int rowEffect = command.ExecuteNonQuery();
+			sqlConnection.Close();
+			return rowEffect;
+		}
+		public int DeleteStudent(Student student)
+		{
+			SqlConnection sqlConnection = new SqlConnection(connectionString);
+			string query="DELETE FROM Student_tbl WHERE Student_Reg_No='"+student.RegNo+"'";
+			SqlCommand command = new SqlCommand(query, sqlConnection);
+			sqlConnection.Open();
+			int rowEffect = command.ExecuteNonQuery();
+			sqlConnection.Close();
+			return rowEffect;
+		}
 
 	}
 }

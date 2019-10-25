@@ -38,5 +38,39 @@ namespace InformationManagementApp.BLL
 				 studentList=gatewayStudent.showAllStudent();
 			return studentList;
 		}
+		public string Update(Student student)
+		{
+			string message;
+
+			if (gatewayStudent.isExist(student))
+			{
+				int rowEffect = gatewayStudent.UpdateInfo(student);
+				if (rowEffect > 0)
+
+					message = "Student information updated successfully!";
+				else
+					message = "Can not update";
+			}
+			else
+			{
+				message = "No student exist with this registration number";
+			}
+			return message;
+		}
+		public string Delete(Student student)
+		{
+			string message;
+			int row=gatewayStudent.DeleteStudent(student);
+			if (row > 0)
+			{
+				message = "Succesfully deleted student";
+				
+			}
+			else
+			{
+				message = "Can not find student";
+			}
+			return message;
+		}
 	}
 }

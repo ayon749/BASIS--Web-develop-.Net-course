@@ -28,6 +28,9 @@
     <input type="text" runat="server" class="form-control" id="inputAddress" placeholder="Address">
   </div>
 	<asp:Button ID="saveButton" runat="server" class="btn btn-primary" Text="Save" OnClick="saveButton_Click" />
+	<asp:Button ID="updateButton" runat="server" class="btn btn-warning" Text="Update" OnClick="updateButton_Click"  />
+	 <asp:Button ID="deleteButton" class="btn btn-danger" runat="server" Text="Delete" OnClick="deleteButton_Click"  />
+
 	<br />
 	<asp:Label ID="successMessageLabel" runat="server" ></asp:Label>
 	<br />
