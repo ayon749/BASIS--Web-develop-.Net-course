@@ -7,30 +7,36 @@
 					<%#Eval("StudentName") %>
 				</ItemTemplate>
 			</asp:TemplateField>
-			<asp:TemplateField HeaderText="Student Email">
-				<ItemTemplate>
-					<%#Eval("StudentEmail") %>
-				</ItemTemplate>
-			</asp:TemplateField>
-			<asp:TemplateField HeaderText="Student Reg No">
+			<asp:TemplateField HeaderText="Registration Number">
 				<ItemTemplate>
 					<%#Eval("RegNo") %>
 				</ItemTemplate>
 			</asp:TemplateField>
-			<asp:TemplateField HeaderText="Student Mobile No">
+			<asp:TemplateField HeaderText="Mobile Number">
 				<ItemTemplate>
 					<%#Eval("MobileNo") %>
 				</ItemTemplate>
 			</asp:TemplateField>
-			<asp:TemplateField HeaderText="Student Age">
+			<asp:TemplateField HeaderText="Email">
 				<ItemTemplate>
-					<%#Eval("Age") %>
+					<%#Eval("Email") %>
 				</ItemTemplate>
 			</asp:TemplateField>
-			<asp:TemplateField HeaderText="Student Address">
+			<asp:TemplateField HeaderText="Address">
 				<ItemTemplate>
 					<%#Eval("Address") %>
 				</ItemTemplate>
+			</asp:TemplateField>
+			<asp:TemplateField HeaderText="Department">
+				<ItemTemplate>
+					<%#Eval("Department") %>
+				</ItemTemplate>
+			</asp:TemplateField>
+			<asp:TemplateField HeaderText="Department Code">
+				<ItemTemplate>
+					<%#Eval("Code") %>
+				</ItemTemplate>
+
 			</asp:TemplateField>
 		</Columns>
 		<FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />

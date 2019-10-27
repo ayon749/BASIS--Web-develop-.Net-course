@@ -1,5 +1,6 @@
 ﻿using InformationManagementApp.DAL;
 using InformationManagementApp.Models;
+using InformationManagementApp.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,9 +33,9 @@ namespace InformationManagementApp.BLL
 			}
 			return message;
 		}
-		public List<Student> ShowAllStudent()
+		public List<DepartmentWiseStudentView> ShowAllStudent()
 		{
-			List<Student> studentList = new List<Student>();
+			List<DepartmentWiseStudentView> studentList = new List<DepartmentWiseStudentView>();
 				 studentList=gatewayStudent.showAllStudent();
 			return studentList;
 		}

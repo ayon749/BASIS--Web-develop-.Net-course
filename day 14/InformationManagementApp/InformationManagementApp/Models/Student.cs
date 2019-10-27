@@ -14,8 +14,9 @@ namespace InformationManagementApp.Models
 		public string MobileNo { get; set; }
 		public int Age { get; set; }
 		public string Address { get; set; }
+		public int DepartmentId { set; get; }
 
-		public Student(string studentName, string studentEmail, string regNo, string mobileNo, int age, string address)
+		public Student(string studentName, string studentEmail, string regNo, string mobileNo, int age, string address,int departmentId)
 		{
 			StudentName = studentName;
 			StudentEmail = studentEmail;
@@ -23,12 +24,16 @@ namespace InformationManagementApp.Models
 			MobileNo = mobileNo;
 			Age = age;
 			Address = address;
+			DepartmentId = departmentId;
 		}
 
-		public Student(int studentId, string studentName, string studentEmail, string regNo, string mobileNo, int age, string address):this(studentName,studentEmail,regNo,mobileNo,age,address)
+		public Student(int studentId, string studentName, string studentEmail, string regNo, string mobileNo, int age, string address,int departmentId)
+			:this(studentName,studentEmail,regNo,mobileNo,age,address,departmentId)
 		{
 			StudentId = studentId;
 		
 		}
+
+		
 	}
 }

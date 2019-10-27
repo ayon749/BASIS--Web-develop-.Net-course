@@ -85,6 +85,15 @@ namespace InformationManagementApp {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputAddress;
         
         /// <summary>
+        /// ddlDepartmentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDepartmentList;
+        
+        /// <summary>
         /// saveButton control.
         /// </summary>
         /// <remarks>

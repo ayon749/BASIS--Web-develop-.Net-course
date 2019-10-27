@@ -1,5 +1,6 @@
 ﻿using InformationManagementApp.BLL;
 using InformationManagementApp.Models;
+using InformationManagementApp.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace InformationManagementApp
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			StudentManager studentManager = new StudentManager();
-			List<Student> studentList = new List<Student>();
+			List<DepartmentWiseStudentView> studentList = new List<DepartmentWiseStudentView>();
 			studentList = studentManager.ShowAllStudent();
 			studentGridView.DataSource = studentList;
 			studentGridView.DataBind();

@@ -1,4 +1,5 @@
 ﻿using InformationManagementApp.Models;
+using InformationManagementApp.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -37,34 +38,35 @@ namespace InformationManagementApp.DAL
  ", Student_Mobile_no" +
  ", Student_Age" +
  ", Student_Address" +
- ") VALUES ('" + student.StudentName + "','" + student.StudentEmail + "','" + student.RegNo + "','" + student.MobileNo + "','" + student.Age + "','" + student.Address + "')";
+ ", DepartmentId" +
+ ") VALUES ('" + student.StudentName + "','" + student.StudentEmail + "','" + student.RegNo + "','" + student.MobileNo + "','" + student.Age + "','" + student.Address + "','"+student.DepartmentId+"')";
 			SqlCommand command = new SqlCommand(query, sqlConnection);
 			sqlConnection.Open();
 			int rowEffect = command.ExecuteNonQuery();
 			sqlConnection.Close();
 			return rowEffect;
 		}
-		public List<Student> showAllStudent()
+		public List<DepartmentWiseStudentView> showAllStudent()
 		{
-			List<Student> studentList = new List<Student>();
+			List<DepartmentWiseStudentView> studentList = new List<DepartmentWiseStudentView>();
 			string connectionString = @"Server=DESKTOP-KIQISOE\MUSHFIQSQL;Database=InformationManagementDB; Integrated Security=true;";
 			SqlConnection sqlConnection = new SqlConnection(connectionString);
-			string query = "SELECT * FROM Student_tbl ORDER BY Student_id DESC";
+			string query = "SELECT * FROM DepartmentWiseStudent";
 			SqlCommand command = new SqlCommand(query, sqlConnection);
 			sqlConnection.Open();
 			SqlDataReader reader = command.ExecuteReader();
 			while (reader.Read())
 			{
-				int studentId = (int)reader["Student_id"];
-				string studentName = reader["Student_Name"].ToString();
-				string studentEmail = reader["Student_Email"].ToString();
-				string studentRegNo = reader["Student_Reg_No"].ToString();
-				string studentMobileNo = reader["Student_Mobile_no"].ToString();
-				int studentAge = (int)reader["Student_Age"];
-				string studentAddress = reader["Student_Address"].ToString();
-				Student student = new Student(studentName, studentEmail, studentRegNo, studentMobileNo, studentAge, studentAddress);
-				student.StudentId = studentId;
-				studentList.Add(student);
+				DepartmentWiseStudentView departmentWiseStudent = new DepartmentWiseStudentView();
+				departmentWiseStudent.StudentName = reader["Student_Name"].ToString();
+				departmentWiseStudent.RegNo = reader["Student_Reg_No"].ToString();
+				departmentWiseStudent.MobileNo = reader["Student_Mobile_no"].ToString();
+				departmentWiseStudent.Email = reader["Student_Email"].ToString();
+				departmentWiseStudent.Address = reader["Student_Address"].ToString();
+				departmentWiseStudent.Department = reader["DepartmentName"].ToString();
+				departmentWiseStudent.Code = reader["DepartmentCode"].ToString();
+
+				studentList.Add(departmentWiseStudent);
 
 
 			}

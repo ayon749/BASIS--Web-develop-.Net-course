@@ -15,10 +15,25 @@ namespace InformationManagementApp
 		StudentManager studentManager = new StudentManager();
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			List<Student> studentList = new List<Student>();
-			studentList=studentManager.ShowAllStudent();
+			if (!IsPostBack)
+			{
+				BindAllDepartment();
+			}
+			//List<Student> studentList = new List<Student>();
+			//studentList=studentManager.ShowAllStudent();
 			//studentGridView.DataSource = studentList;
 			//studentGridView.DataBind();
+		}
+
+		private void BindAllDepartment()
+		{
+			DepartmentManager departmentManager = new DepartmentManager();
+			List<Department> departments = new List<Department>();
+			departments = departmentManager.GetDepartmentName();
+			ddlDepartmentList.DataTextField ="DepartmentName";
+			ddlDepartmentList.DataValueField ="DepartmentId";
+			ddlDepartmentList.DataSource = departments;
+			ddlDepartmentList.DataBind();
 		}
 
 		protected void saveButton_Click(object sender, EventArgs e)
@@ -29,8 +44,12 @@ namespace InformationManagementApp
 			string mobileNo = inputMobileNo.Value;
 			int age = Convert.ToInt32(inputAge.Value);
 			string address = inputAddress.Value;
-			Student student = new Student(name, email, regNo, mobileNo, age, address);
 			
+			int deptId = Convert.ToInt32(ddlDepartmentList.SelectedValue);
+			Student student = new Student(name, email, regNo, mobileNo, age, address,deptId);
+
+
+
 			string message=studentManager.StudentInsert(student);
 			if(message== "Student information saved successfully!")
 			{
@@ -43,8 +62,8 @@ namespace InformationManagementApp
 				successMessageLabel.ForeColor = Color.Red;
 
 			}
-			List<Student> studentList = new List<Student>();
-			studentList = studentManager.ShowAllStudent();
+			//List<Student> studentList = new List<Student>();
+			//studentList = studentManager.ShowAllStudent();
 			//studentGridView.DataSource = studentList;
 			//studentGridView.DataBind();
 			ClearField();
@@ -69,7 +88,8 @@ namespace InformationManagementApp
 			string mobileNo = inputMobileNo.Value;
 			int age = Convert.ToInt32(inputAge.Value);
 			string address = inputAddress.Value;
-			Student student = new Student(name, email, regNo, mobileNo, age, address);
+			int deptId = Convert.ToInt32(ddlDepartmentList.SelectedValue);
+			Student student = new Student(name, email, regNo, mobileNo, age, address,deptId);
 			string message = studentManager.Update(student);
 			successMessageLabel.Text = message;
 		}
@@ -82,7 +102,8 @@ namespace InformationManagementApp
 			string mobileNo = inputMobileNo.Value;
 			int age = Convert.ToInt32(inputAge.Value);
 			string address = inputAddress.Value;
-			Student student = new Student(name, email, regNo, mobileNo, age, address);
+			int deptId = Convert.ToInt32(ddlDepartmentList.SelectedValue);
+			Student student = new Student(name, email, regNo, mobileNo, age, address,deptId);
 			string message=studentManager.Delete(student);
 			successMessageLabel.Text = message;
 
