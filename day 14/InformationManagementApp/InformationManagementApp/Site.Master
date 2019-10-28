@@ -55,6 +55,7 @@
                         <li><a runat="server" href="~/Contact">Contact</a></li>
 						<li><a runat="server" href="StudentInformationUI.aspx">Student Information</a></li>
 						<li><a runat="server" href="StudentList.aspx" >Student List</a></li>
+						<li><a runat="server" href="StudentEnrolledCourseUI.aspx">Enrolled Student List</a></li>
                     </ul>
                 </div>
             </div>

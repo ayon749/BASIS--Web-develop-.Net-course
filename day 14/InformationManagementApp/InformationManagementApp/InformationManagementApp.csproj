@@ -154,6 +154,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="StudentEnrolledCourseUI.aspx" />
     <Content Include="StudentList.aspx" />
     <Content Include="StudentInformationUI.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -172,6 +173,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BLL\DepartmentManager.cs" />
+    <Compile Include="BLL\EnrolledManager.cs" />
     <Compile Include="BLL\StudentManager.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -181,6 +183,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\GatewayDepartment.cs" />
+    <Compile Include="DAL\GatewayEnrolled.cs" />
     <Compile Include="DAL\GatewayStudent.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -195,6 +198,7 @@
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\ViewModels\DepartmentWiseStudent.cs" />
+    <Compile Include="Models\ViewModels\StudentWiseCourseEnrolledViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -209,6 +213,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentEnrolledCourseUI.aspx.cs">
+      <DependentUpon>StudentEnrolledCourseUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentEnrolledCourseUI.aspx.designer.cs">
+      <DependentUpon>StudentEnrolledCourseUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentList.aspx.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
